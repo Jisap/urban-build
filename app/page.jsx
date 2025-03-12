@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero"
 import Topbar from "@/components/Topbar"
-import Header from "./Header"
+import Header from "../components/Header"
 import Stats from "@/components/Stats"
 import Services from "@/components/Services"
 import Work from "@/components/Work"
