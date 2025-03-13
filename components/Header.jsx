@@ -2,6 +2,9 @@
 
 import { RiArrowRightUpLine } from "react-icons/ri";
 import { Link as ScrollLink } from "react-scroll";  
+import Logo from "./Logo";
+import NavMobile from "./NavMobile";
+
 
 const links = [
   {
@@ -33,7 +36,7 @@ const Header = () => {
 
       <div className="flex items-center justify-between">
         {/* logo */}
-        <div>logo</div>
+        <Logo />
 
         {/* nav */}
         <nav className="hidden xl:flex items-center gap-12">
@@ -42,7 +45,7 @@ const Header = () => {
               return (
                 <li 
                   key={index} 
-                  className="text-white text-sm uppercase font-primary font-medium tracking-[1.2px] after:content-['/'] after:mx-4 last:after:content-none"
+                  className="text-white text-sm uppercase font-primary font-medium tracking-[1.2px] after:content-['/'] after:mx-4 last:after:content-none after:text-accent"
                 >
                   <ScrollLink 
                     to={link.path}
@@ -66,6 +69,11 @@ const Header = () => {
             </div>
           </button>
         </nav>
+
+        {/* nav mobile */}
+        <div className="xl:hidden">
+            <NavMobile />
+        </div>
       </div>
       </div>
     </header>
