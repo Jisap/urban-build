@@ -1,5 +1,6 @@
 
 import { RiPhoneFill, RiMailFill } from "react-icons/ri"
+import Socials from "./Socials"
 
 
 const Topbar = () => {
@@ -29,7 +30,12 @@ const Topbar = () => {
           </div>
 
           {/* socials */}
-          <div>socials</div>
+          <div>
+            <Socials 
+              containerStyles="flex items-center gap-8 mx-auto xl:mx-0"
+              iconStyles="text-primary"
+            />
+          </div>
         </div>
       </div>
     </section>
