@@ -56,10 +56,31 @@ const NavMobile = () => {
         <div>
           <SheetHeader>
             <SheetTitle><Logo /></SheetTitle>
-            <SheetDescription>
+            <SheetDescription className="sr-only">
               Navigation menu
             </SheetDescription>
           </SheetHeader>
+          <ul className="w-full flex flex-col gap-10 justify-center text-center">
+            {links.map((link, index) => {
+              return (
+                <li key={index} className="text-white uppercase font-primary font-medium tracking-[1.2px]">
+                  <ScrollLink 
+                    to={link.path}
+                    smooth
+                    spy
+                    duration={500}
+                    className="cursor-pointer"  
+                    activeClass="text-accent"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </ScrollLink>
+                </li>
+              )
+            })}
+          </ul>
+          {/* socials */}
+          <Socials />
         </div>
       </SheetContent>
     </Sheet>
