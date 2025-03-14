@@ -53,7 +53,7 @@ const NavMobile = () => {
         <RiMenu3Fill />
       </SheetTrigger>
       <SheetContent className="bg-primary border-none text-white">
-        <div>
+        <div className="flex flex-col pt-16 pb-8 items-center justify-between h-full">
           <SheetHeader>
             <SheetTitle><Logo /></SheetTitle>
             <SheetDescription className="sr-only">
@@ -80,7 +80,7 @@ const NavMobile = () => {
             })}
           </ul>
           {/* socials */}
-          <Socials />
+          <Socials containerStyles="text-white text-xl flex gap-6"/>
         </div>
       </SheetContent>
     </Sheet>
