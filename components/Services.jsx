@@ -30,8 +30,8 @@ const serviceData = [
       "Interior Finish",
     ],
     thumbs: [
-      { url: "/assets/img/services/htumb-1.jpg" },
-      { url: "/assets/img/services/htumb-2.jpg" },
+      { url: "/assets/img/services/thumb-1.jpg" },
+      { url: "/assets/img/services/thumb-2.jpg" },
     ],
   },
   {
@@ -48,8 +48,8 @@ const serviceData = [
       "Painting",
     ],
     thumbs: [
-      {url: "/assets/img/services/htumb-3.jpg"},
-      {url: "/assets/img/services/htumb-4.jpg"},
+      {url: "/assets/img/services/thumb-3.jpg"},
+      {url: "/assets/img/services/thumb-4.jpg"},
     ],
   },
   {
@@ -66,8 +66,8 @@ const serviceData = [
       "Roof Restore",
     ],
     thumbs: [
-      { url: "/assets/img/services/htumb-4.jpg" },
-      { url: "/assets/img/services/htumb-5.jpg" },
+      { url: "/assets/img/services/thumb-4.jpg" },
+      { url: "/assets/img/services/thumb-5.jpg" },
     ],
   },
   {
@@ -84,8 +84,8 @@ const serviceData = [
       "Safety",
     ],
     thumbs: [
-      { url: "/assets/img/services/htumb-1.jpg" },
-      { url: "/assets/img/services/htumb-3.jpg" },
+      { url: "/assets/img/services/thumb-1.jpg" },
+      { url: "/assets/img/services/thumb-3.jpg" },
     ],
   },
 ]
@@ -107,8 +107,12 @@ const Services = () => {
         </div>
 
         {/* tabs */}
-        <Tabs defaultValue="construction" className="h-full">
-          <TabsList className="grid w-full grid-cols-2">
+        <Tabs 
+          defaultValue="construction" 
+          onValueChange={(value) => setActiveTab(value)}
+          className="flex flex-col xl:flex-row w-full gap-[30px]"
+        >
+          <TabsList className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-[30px] h-full w-full rounded-none p-0 bg-transparent xl:w-[345px]">
             {serviceData.map((item) => {
               return (
                 <TabsTrigger 
@@ -116,20 +120,49 @@ const Services = () => {
                   value={item.name} 
                   className="w-full rounded-none h-[100px] flex items-center relative shadow-custom p-0 outline-none"
                 >
-                  <div>
-
+                  <div
+                    className={`w-[100px] h-[100px] flex items-center justify-center absolute left-0
+                      ${activeTab === item.name ? "bg-primary text-white" : "bg-accent text-primary"}
+                    `}
+                  >
+                    <div className="text-4xl">
+                     {item.icon}
+                    </div>
                   </div>
-                  {item.name}
+
+                  <div className="uppercase font-primary text-base font-semibold tracking-[.6px] w-[100px] ml-16">
+                    {item.name}
+                  </div>
                 </TabsTrigger>
               )
             })}
           </TabsList>
-          <TabsContent value="account">
-            Account
-          </TabsContent>
-          <TabsContent value="password">
-            Password
-          </TabsContent>
+          
+          {/* tabs content */}
+          <div className="flex-1 bg-white shadow-custom h-[490px] p-[30px]">
+            {serviceData.map((item) => (
+              <TabsContent
+                key={item.name}
+                value={item.name}
+                className="m-0"
+              >
+                <div className="flex md:flex-col gap-5 xl:gap-[30px]">
+                  {/* image */}
+                  <div>
+                    {item.thumbs.map((thumb, index) => ( 
+                      <div key={index} className="relative w-[140px] xl:w-[200px] h-[140px] xl:h-[200px]">
+                        <Image 
+                          src={thumb.url}
+                          fill
+                          alt=""
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </TabsContent>
+            ))}
+          </div>
         </Tabs>
       </div>
     </section>
