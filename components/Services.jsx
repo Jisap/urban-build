@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card"
+import Pretitle from "./Pretitle"
 
 
 
@@ -97,7 +98,8 @@ const Services = () => {
   return (
     <section className="pt-16 xl:pt-32" id="services">
       <div className="container mx-auto">
-        <div>
+        <div className="text-center max-w-[540px] mx-auto mb-20">
+          <Pretitle text="Our Services" center />
           <h2 className="h2 mb-3">
             Solution We Provide
           </h2>
@@ -146,9 +148,9 @@ const Services = () => {
                 value={item.name}
                 className="m-0"
               >
-                <div className="flex md:flex-col gap-5 xl:gap-[30px]">
+                <div className="flex flex-col md:flex-row gap-[30px]">
                   {/* image */}
-                  <div>
+                  <div className="flex md:flex-col gap-5 xl:gap-[30px]">
                     {item.thumbs.map((thumb, index) => ( 
                       <div key={index} className="relative w-[140px] xl:w-[200px] h-[140px] xl:h-[200px]">
                         <Image 
@@ -158,6 +160,27 @@ const Services = () => {
                         />
                       </div>
                     ))}
+                  </div>
+
+                  {/* text & button */}
+                  <div>
+                    <div>
+                      <h3 className="h3 mb-6">{item.title}</h3>
+                      <p className="mb-10">{item.description}</p>
+                      {/* service list */}
+                      <ul className="grid grid-cols-2 gap-4 mb-12">
+                        {item.serviceList.map((service, index) => {
+                          return (
+                            <li key={index} className="flex items-center gap-4">
+                              <div className="w-[6px] h-[6px] bg-accent"></div>
+                              <div className="capitalize font-medium text-primary">{service}</div>
+                            </li>
+                          )
+                        })}
+                      </ul>
+                      {/* btn */}
+                      <Button text="Read more" />
+                    </div>
                   </div>
                 </div>
               </TabsContent>
