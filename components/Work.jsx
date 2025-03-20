@@ -58,7 +58,8 @@ const Work = () => {
                 alt=""
                 quality={100}
               />
-              <div className="w-[98%] h-[84px] bg-primary absolute bottom-4 flex justify-between items-center text-white">
+
+              <div className="w-[98%] h-[84px] bg-primary absolute bottom-4 flex justify-between items-center text-white md:translate-y-[108px] md:group-hover:translate-y-0 transition-all duration-500">
                 <div className="pl-8">
                   <h4 className="text-white font-primary font-semibold tracking-[1px]">
                     {item.name}
