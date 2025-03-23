@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/navigation"
 import Image from "next/image"
+import SliderBtns from "./SliderBtns"
 
 
 
@@ -85,6 +86,7 @@ const Slider = () => {
       </SwiperSlide>
 
       {/* slider btns */}
+      <SliderBtns />
     </Swiper>
   )
 }
