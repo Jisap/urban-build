@@ -34,7 +34,15 @@ const Testimonials = () => {
                 alt=""
               />
             </div>
-            <div className="xl:absolute xl:bottom-0 xl:right-[160px] relative max-w-max bg-pink-300">
+            <div className="xl:absolute xl:bottom-0 xl:right-[160px] relative max-w-max">
+              {/* quote icon img*/}
+              <Image 
+                src="/assets/img/testimonials/quote.svg"
+                width={54}
+                height={36}
+                alt=""
+                className="absolute z-20 -top-4 left-[60px]"
+              />
               <Slider />
             </div>
           </div>
