@@ -47,9 +47,12 @@ const Faq = () => {
     <section className="pt-16 xl:pt-32">
       <div className="container mx-auto">
         {/* text */}
-        <div>
+        <div className="text-center max-w-[540px] mx-auto xl:mb-20">
           <Pretitle text="Faq" center />
-          <h2 className="h2">Got Questions?</h2>
+          <h2 className="h2 mb-3">Got Questions? We&apos;ve Got You Covered</h2>
+          <p className="mb-11 max-w-[480px] mx-auto">
+            From project planning to final touches, we&apos;ve answered the most common questions to help you make informed decisions.
+          </p>
         </div>
         {/* faq items */}
         <div>faq items</div>
