@@ -24,6 +24,19 @@ const FaqItem = ({ title, description }) => {
           )}
         </button>
       </div>
+
+      {/* description */}
+      <div 
+        className={`${
+          isOpen 
+            ? "max-h-[200px] opacity-100  transition-all duration-500 ease-in-out" //se cambia la altura del div y la transparencia
+            : "max-h-0 opacity-0 p-0 transition-all duration-500 ease-in-out overflow-hidden"
+        }`}
+      >
+        <p className='pb-8 flex items-center max-w-[860px]'>
+          {description}
+        </p>
+      </div>
     </div>
   )
 }
