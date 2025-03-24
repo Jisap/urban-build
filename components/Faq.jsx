@@ -1,6 +1,7 @@
 import { fadeIn } from "@/variants"
 import Pretitle from "./Pretitle"
 import { motion } from "framer-motion"
+import FaqItem from "./FaqItem";
 
 const faqItemsData = [
   {
@@ -55,7 +56,18 @@ const Faq = () => {
           </p>
         </div>
         {/* faq items */}
-        <div>faq items</div>
+        <ul>
+          {faqItemsData.map((item, index) => {
+            return (
+              <li key={index}>
+                <FaqItem 
+                  title={item.title} 
+                  description={item.description} 
+                />
+              </li>
+            )
+          })}
+        </ul>
       </div>
     </section>
   )
