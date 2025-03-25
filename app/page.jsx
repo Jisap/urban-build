@@ -51,6 +51,8 @@ const Home = () => {
       <Faq />
       <Contact />
       <Footer />
+
+      <div className="h-[1000px]"></div>
     </div>
   )
 }
