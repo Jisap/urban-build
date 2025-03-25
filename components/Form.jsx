@@ -39,6 +39,15 @@ function Form() {
               <SelectItem value="construction">
                 Construction
               </SelectItem>
+              <SelectItem value="renovation">
+                Renovation
+              </SelectItem>
+              <SelectItem value="restoration">
+                Restoration
+              </SelectItem>
+              <SelectItem value="Consulting">
+                Consulting
+              </SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
