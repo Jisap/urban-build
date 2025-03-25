@@ -56,6 +56,11 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
+              
+              <Socials 
+                containerStyles="flex gap-[40px]"
+                iconStyles="text-primary text-[20px]"
+              />
             </div>
             
             {/* form */}
