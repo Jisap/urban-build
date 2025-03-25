@@ -1,5 +1,6 @@
 import { RiChat1Line, RiMap2Line, RiSmartphoneLine } from "react-icons/ri"
 import Socials from "./Socials"
+import Form from "./Form"
 
 
 
@@ -17,6 +18,13 @@ const Contact = () => {
               <h2 className="h2 mb-3">
                 Request a Quote
               </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Pellentesque et odio sed est pellentesque gravida. 
+                Sed pharetra, felis ac mattis commodo, massa risus 
+                tincidunt quam, in consequat tortor libero nec magna.
+              </p>
+              <Form />
             </div>
           </div>
         </div>
