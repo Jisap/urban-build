@@ -19,7 +19,7 @@ const Contact = () => {
               <h2 className="h2 mb-3">
                 Request a Quote
               </h2>
-              <p>
+              <p className="mb-9">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Pellentesque et odio sed est pellentesque gravida. 
               </p>

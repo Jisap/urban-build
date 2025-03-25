@@ -16,7 +16,7 @@ import Button from "./Button"
 function Form() {
   return (
     <form className="flex flex-col">
-      <div className="flex flex-col gap-20px mb-[20px]">
+      <div className="flex flex-col gap-[20px] mb-[20px]">
         <Input
           type="fullname"
           placeholder="Full Name"
@@ -25,7 +25,7 @@ function Form() {
           type="email"
           placeholder="Email address"
         />
-        <div>
+        <div className="flex flex-col xl:flex-row gap-[20px]">
           <Input
             type="phone"
             placeholder="Phone number"
