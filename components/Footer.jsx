@@ -79,7 +79,6 @@ const Footer = () => {
         <Socials 
           containerStyles="flex gap-6 text-white"
           iconStyles="hover:text-accent transition-all"
-
         />
       </div>
     </footer>
