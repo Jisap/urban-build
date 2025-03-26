@@ -31,7 +31,7 @@ const Footer = () => {
           {/* Contact */}
           <div className="flex-1 text-border">
             <h4 className="h4 text-white mb-10">Contact</h4>
-            <ul>
+            <ul className="flex flex-col gap-6">
               <li className="flex items-center gap-4">
                 <RiMapPin2Fill className="text-accent text-xl"/>
                 <p>1250 Bristol St, San Francisco, CA 94103</p>
@@ -55,20 +55,27 @@ const Footer = () => {
               voluptas, quidem, voluptate.
             </p>
             {/* input */}
-            <div>
+            <div className="relative max-w-[370px]">
               <input 
                 type="text"
                 placeholder="Enter your email"
                 className="bg-[#222427] h-16 w-full pl-7 rounded-none outline-none flex items-center"  
               />
               <button
-                className="bg-accent w-12 h-12 absolute right-2 top-2 bottom-2 text-priamry text-xl flex items-center justify-center"
+                className="bg-accent w-12 h-12 absolute right-2 top-2 bottom-2 text-primary text-xl flex items-center justify-center"
               >
                 <RiArrowRightLine />
               </button>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* copyright */}
+      <div className="container mx-auto xl:px-0 py-12 border-t border-border/10 flex flex-col gap-6 xl:flex-row items-center justify-between">
+        <p className="text-border">
+          Copyright © 2025 Urbanbuild. All rights reserved.
+        </p>
       </div>
     </footer>
   )
