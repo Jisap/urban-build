@@ -127,90 +127,97 @@ const Services = () => {
         </motion.div>
 
         {/* tabs */}
-        <Tabs 
-          defaultValue="construction" 
-          onValueChange={(value) => setActiveTab(value)}
-          className="flex flex-col xl:flex-row w-full gap-[30px]"
+        <motion.div
+          variants={fadeIn("up", 0.3)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.2 }}
         >
-          <TabsList className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-[30px] h-full w-full rounded-none p-0 bg-transparent xl:w-[345px]">
-            {serviceData.map((item) => {
-              return (
-                <TabsTrigger 
-                  key={item.name} 
-                  value={item.name} 
-                  className="w-full rounded-none h-[100px] flex items-center relative shadow-custom p-0 outline-none"
-                >
-                  <div
-                    className={`w-[100px] h-[100px] flex items-center justify-center absolute left-0
-                      ${activeTab === item.name ? "bg-primary text-white" : "bg-accent text-primary"}
-                    `}
+          <Tabs 
+            defaultValue="construction" 
+            onValueChange={(value) => setActiveTab(value)}
+            className="flex flex-col xl:flex-row w-full gap-[30px]"
+          >
+            <TabsList className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-[30px] h-full w-full rounded-none p-0 bg-transparent xl:w-[345px]">
+              {serviceData.map((item) => {
+                return (
+                  <TabsTrigger 
+                    key={item.name} 
+                    value={item.name} 
+                    className="w-full rounded-none h-[100px] flex items-center relative shadow-custom p-0 outline-none"
                   >
-                    <div className="text-4xl">
-                     {item.icon}
-                    </div>
-                  </div>
-
-                  <div className="uppercase font-primary text-base font-semibold tracking-[.6px] w-[100px] ml-16">
-                    {item.name}
-                  </div>
-                </TabsTrigger>
-              )
-            })}
-          </TabsList>
-          
-          {/* tabs content */}
-          <div className="flex-1 bg-white shadow-custom h-[490px] p-[30px]">
-            {serviceData.map((item) => (
-              <TabsContent
-                key={item.name}
-                value={item.name}
-                className="m-0"
-              >
-                <motion.div 
-                  variants={fadeInVariant}
-                  initial="hidden"
-                  whileInView="show"
-                  exit="hidden"
-                  className="flex flex-col md:flex-row gap-[30px]"
-                >
-                  {/* image */}
-                  <div className="flex md:flex-col gap-5 xl:gap-[30px]">
-                    {item.thumbs.map((thumb, index) => ( 
-                      <div key={index} className="relative w-[140px] xl:w-[200px] h-[140px] xl:h-[200px]">
-                        <Image 
-                          src={thumb.url}
-                          fill
-                          alt=""
-                        />
+                    <div
+                      className={`w-[100px] h-[100px] flex items-center justify-center absolute left-0
+                        ${activeTab === item.name ? "bg-primary text-white" : "bg-accent text-primary"}
+                      `}
+                    >
+                      <div className="text-4xl">
+                      {item.icon}
                       </div>
-                    ))}
-                  </div>
-
-                  {/* text & button */}
-                  <div>
-                    <div>
-                      <h3 className="h3 mb-6">{item.title}</h3>
-                      <p className="mb-10">{item.description}</p>
-                      {/* service list */}
-                      <ul className="grid grid-cols-2 gap-4 mb-12">
-                        {item.serviceList.map((service, index) => {
-                          return (
-                            <li key={index} className="flex items-center gap-4">
-                              <div className="w-[6px] h-[6px] bg-accent"></div>
-                              <div className="capitalize font-medium text-primary">{service}</div>
-                            </li>
-                          )
-                        })}
-                      </ul>
-                      {/* btn */}
-                      <Button text="Read more" />
                     </div>
-                  </div>
-                </motion.div>
-              </TabsContent>
-            ))}
-          </div>
-        </Tabs>
+
+                    <div className="uppercase font-primary text-base font-semibold tracking-[.6px] w-[100px] ml-16">
+                      {item.name}
+                    </div>
+                  </TabsTrigger>
+                )
+              })}
+            </TabsList>
+            
+            {/* tabs content */}
+            <div className="flex-1 bg-white shadow-custom h-[490px] p-[30px]">
+              {serviceData.map((item) => (
+                <TabsContent
+                  key={item.name}
+                  value={item.name}
+                  className="m-0"
+                >
+                  <motion.div 
+                    variants={fadeInVariant}
+                    initial="hidden"
+                    whileInView="show"
+                    exit="hidden"
+                    className="flex flex-col md:flex-row gap-[30px]"
+                  >
+                    {/* image */}
+                    <div className="flex md:flex-col gap-5 xl:gap-[30px]">
+                      {item.thumbs.map((thumb, index) => ( 
+                        <div key={index} className="relative w-[140px] xl:w-[200px] h-[140px] xl:h-[200px]">
+                          <Image 
+                            src={thumb.url}
+                            fill
+                            alt=""
+                          />
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* text & button */}
+                    <div>
+                      <div>
+                        <h3 className="h3 mb-6">{item.title}</h3>
+                        <p className="mb-10">{item.description}</p>
+                        {/* service list */}
+                        <ul className="grid grid-cols-2 gap-4 mb-12">
+                          {item.serviceList.map((service, index) => {
+                            return (
+                              <li key={index} className="flex items-center gap-4">
+                                <div className="w-[6px] h-[6px] bg-accent"></div>
+                                <div className="capitalize font-medium text-primary">{service}</div>
+                              </li>
+                            )
+                          })}
+                        </ul>
+                        {/* btn */}
+                        <Button text="Read more" />
+                      </div>
+                    </div>
+                  </motion.div>
+                </TabsContent>
+              ))}
+            </div>
+          </Tabs>
+        </motion.div>
       </div>
     </section>
   )
