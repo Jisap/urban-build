@@ -76,6 +76,11 @@ const Footer = () => {
         <p className="text-border">
           Copyright © 2025 Urbanbuild. All rights reserved.
         </p>
+        <Socials 
+          containerStyles="flex gap-6 text-white"
+          iconStyles="hover:text-accent transition-all"
+
+        />
       </div>
     </footer>
   )
