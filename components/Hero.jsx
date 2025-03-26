@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
-import Button from "./Button"
 import { fadeIn } from "@/variants"
+import Button from "./Button"
 
 
 
